@@ -9,48 +9,30 @@ export class AppComponent {
   title = 'Angular-workshop';
   score: number = 100;
   name: string = "นาย เอ็น นามสกุล อุ่น"
-  student:any = {
-    name: "peter",
-    studentId: "5921602663",
-    weight: 64,
-    height: 175
-  }
+  
 
-  studentlist = [{
-    name: "เอ็นอุ่น",
-    studentId: "5921602663",
-    weight: 63,
-    height: 175
+  productlist = [{
+    pId: "0001",
+    pName: "แปลงสีฟัน",
+    pCost: 200
   },
   {
-    name: "นายเอ ",
-    studentId: "5921600237",
-    weight: 70,
-    height: 173
+    pId: "0002",
+    pName: "แก้วน้ำ",
+    pCost: 10
   },
   {
-    name: "นายบี ",
-    studentId: "5921600123",
-    weight: 80,
-    height: 163
+    pId: "0003",
+    pName: "ยาสีฟัน",
+    pCost: 20
   }
-
-  ]
+  ];
+  selectedProduct:any;
+  selectProduct(p){
+    this.selectedProduct = p;
+  }
 
   constructor() {
-    this.studentlist.map((object,index)=>{
-      console.log(object);
-      console.log(index);
-      let obj:any = object;
-      obj.bmi = (object.weight/((object.weight/100)*(object.weight/100))).toFixed(2);
-      return obj;
-    })
-    console.log(this.studentlist)
-
-    this.student.bmi = (this.student.weight/((this.student.height/100)*this.student.height/100)).toFixed(2);
-      
-    console.log(this.student)
   }
-
   
 }
