@@ -10,8 +10,9 @@ export class ProductDetailComponent implements OnInit {
   constructor() { }
 
   addProduct: any;
-  addCart(p){
-    this.addProduct = p;
+  addCart(){
+    this.addProduct = this.selectedProduct;
+    console.log(this.selectedProduct)
   }
   ngOnInit() 
   {
